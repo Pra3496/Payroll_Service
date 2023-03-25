@@ -41,13 +41,46 @@ SELECT * FROM employee_payroll
 
 INSERT INTO employee_payroll(Name,Salary,StartDate)
 VALUES
+('Kushal',52400,'2023-04-30','M'),
+('Bill',70000,'2018-04-30','M'),
+('Shubham',38000,'2023-04-30','M'),
+('Bill',70000,'2019-03-25','M'),
+('Pranav',50000,'2023-04-30','M'),
+('Braowly',70000,'2020-04-22','F'),
+('Prakash',50000,'2023-04-30','M'),
+('Skyler',90000,'2023-03-25','F')
 
-
-('Bill',70000,'2021-03-25'),
-('Bill',90000,'2023-03-25')
 
 
 
 SELECT * FROM employee_payroll WHERE StartDate BETWEEN CAST('2018-01-01' AS DATE) AND CONVERT(date, getdate());
 
 -----------------------------------------------------------------------------
+
+-- UC -6 Ability to add Gender to Employee Payroll Table and Update the Rows to reflect the correct Employee Gender
+
+
+ALTER TABLE employee_payroll ADD Gender CHAR(2);
+
+
+
+
+INSERT INTO employee_payroll(Name,Salary,StartDate,Gender)
+VALUES
+('Charlie',52400,'2023-04-30','F'),
+('Charlie',52400,'2023-04-30','F'),
+('Charlie',52400,'2023-04-30','F'),
+('Bill',70000,'2018-04-30','M'),
+('Shubham',38000,'2023-04-30','M'),
+('Bill',70000,'2019-03-25','M'),
+('Pranav',50000,'2023-04-30','M'),
+('Braowly',70000,'2020-04-22','F'),
+('Prakash',50000,'2023-04-30','M'),
+('Skyler',90000,'2023-03-25','F')
+
+SELECT * FROM employee_payroll;
+
+
+UPDATE employee_payroll set gender =
+'M' where name = 'Bill' or name =
+'Charlie';
