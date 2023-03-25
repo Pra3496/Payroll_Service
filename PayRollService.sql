@@ -18,3 +18,11 @@ StartDate DATE
 
 SELECT * FROM employee_payroll
 
+
+-- UC-3 Ability to create employee payroll data in the payroll service database as part of CRUD Operation
+
+INSERT INTO employee_payroll(Name,Salary,StartDate)
+VALUES('Pranav',50000,'2023-04-30'),
+('Prakash',50000,'2023-04-30'),
+('Kushal',52400,'2023-04-30'),
+('Shubham',38000,'2023-04-30')
