@@ -84,3 +84,19 @@ SELECT * FROM employee_payroll;
 UPDATE employee_payroll set gender =
 'M' where name = 'Bill' or name =
 'Charlie';
+
+
+--UC-7 Ability to find sum, average, min, max and number of male and female employees
+SELECT * FROM employee_payroll;
+SELECT Gender , SUM(Salary) AS SumOfSalary FROM employee_payroll WHERE Gender= 'F'  GROUP BY Gender 
+SELECT Gender , SUM(Salary) AS SumOfSalary FROM employee_payroll WHERE Gender= 'M' GROUP BY Gender 
+
+
+SELECT Gender , AVG(Salary) AS AvgOfSalary FROM employee_payroll WHERE Gender= 'M'  GROUP BY Gender 
+SELECT Gender , AVG(Salary) AS AvgOfSalary FROM employee_payroll WHERE Gender= 'F'  GROUP BY Gender 
+
+SELECT Gender , MIN(Salary) AS MinOfSalary FROM employee_payroll WHERE Gender= 'M'  GROUP BY Gender 
+SELECT Gender , MIN(Salary) AS MinOfSalary FROM employee_payroll WHERE Gender= 'F'  GROUP BY Gender 
+
+SELECT Gender , MAX(Salary) AS MaxOfSalary FROM employee_payroll WHERE Gender= 'M'  GROUP BY Gender 
+SELECT Gender , MIN(Salary) AS MinOfSalary FROM employee_payroll WHERE Gender= 'F'  GROUP BY Gender 
