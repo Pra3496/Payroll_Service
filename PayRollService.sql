@@ -26,3 +26,8 @@ VALUES('Pranav',50000,'2023-04-30'),
 ('Prakash',50000,'2023-04-30'),
 ('Kushal',52400,'2023-04-30'),
 ('Shubham',38000,'2023-04-30')
+
+
+-- UC-4 Ability to retrieve all the employee payroll data that is added to payroll service database
+
+SELECT * FROM employee_payroll
