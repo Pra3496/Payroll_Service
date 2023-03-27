@@ -87,6 +87,7 @@ UPDATE employee_payroll set gender =
 
 
 --UC-7 Ability to find sum, average, min, max and number of male and female employees
+
 SELECT * FROM employee_payroll;
 SELECT Gender , SUM(Salary) AS SumOfSalary FROM employee_payroll WHERE Gender= 'F'  GROUP BY Gender 
 SELECT Gender , SUM(Salary) AS SumOfSalary FROM employee_payroll WHERE Gender= 'M' GROUP BY Gender 
@@ -100,3 +101,9 @@ SELECT Gender , MIN(Salary) AS MinOfSalary FROM employee_payroll WHERE Gender= '
 
 SELECT Gender , MAX(Salary) AS MaxOfSalary FROM employee_payroll WHERE Gender= 'M'  GROUP BY Gender 
 SELECT Gender , MIN(Salary) AS MinOfSalary FROM employee_payroll WHERE Gender= 'F'  GROUP BY Gender 
+
+
+-- UC-8 Ability to extend employee_payroll data to store employee informationlike employee phone, address and department
+
+
+ALTER TABLE employee_payroll  ADD Department VARCHAR(50);
