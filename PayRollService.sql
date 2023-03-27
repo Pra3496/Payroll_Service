@@ -107,3 +107,11 @@ SELECT Gender , MIN(Salary) AS MinOfSalary FROM employee_payroll WHERE Gender= '
 
 
 ALTER TABLE employee_payroll  ADD Department VARCHAR(50);
+
+-- UC-9 Ability to extend employee_payroll table to have Basic Pay, Deductions, Taxable Pay, Income Tax, Net Pay
+
+ALTER TABLE employee_payroll  ADD BasicPay INT
+ALTER TABLE employee_payroll  ADD Deductions INT
+ALTER TABLE employee_payroll  ADD TaxablePay INT
+ALTER TABLE employee_payroll  ADD IncomeTax INT
+ALTER TABLE employee_payroll  ADD NetPay INT
