@@ -123,3 +123,51 @@ VALUES ('Terissa',200000,'F',987654321,'HR'),
 ('Terissa',200000,'F',987654321,'Sales')
 
 
+CREATE TABLE Employee_Table
+(
+EmpId INT IDENTITY(1,1) PRIMARY KEY,
+EmpName VARCHAR(30),
+PhoneNumber BIGINT,
+Address VARCHAR(100),
+City VARCHAR(20),
+State VARCHAR(20),
+Gender CHAR(1),
+)
+
+SELECT * FROM Employee_Table
+INSERT INTO Employee_Table (EmpName) 
+VALUES ('Pranav'),
+('Pravin'),
+('Vivek'),
+('loki')
+
+CREATE TABLE Department_Table
+(
+DepartmentId INT IDENTITY(1,1) PRIMARY KEY,
+DepartmentName VARCHAR(30),
+EmpId INT,
+FOREIGN KEY (EmpId) REFERENCES Employee_Table(EmpId)
+)
+
+INSERT INTO Department_Table (DepartmentName,EmpId) 
+VALUES ('sales',6)
+SELECT * FROM Department_Table;
+
+CREATE TABLE PayRoll_Table
+(
+EmpId INT,
+BasicPay INT,
+Deduction INT,
+TaxablePay INT,
+Tax INT,
+NetPay INT,
+FOREIGN KEY (EmpId) REFERENCES Employee_Table(EmpId)
+)
+
+CREATE TABLE Company_Table
+(
+CompanyId INT IDENTITY(1,1) PRIMARY KEY,
+CompanyName VARCHAR(30),
+EmpId INT,
+FOREIGN KEY (EmpId) REFERENCES Employee_Table(EmpId),
+)
