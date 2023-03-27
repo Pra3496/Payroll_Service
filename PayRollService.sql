@@ -115,3 +115,11 @@ ALTER TABLE employee_payroll  ADD Deductions INT
 ALTER TABLE employee_payroll  ADD TaxablePay INT
 ALTER TABLE employee_payroll  ADD IncomeTax INT
 ALTER TABLE employee_payroll  ADD NetPay INT
+
+
+-- UC10
+INSERT INTO employee_payroll (Name,Salary,Gender,PhoneNumber,Department)
+VALUES ('Terissa',200000,'F',987654321,'HR'),
+('Terissa',200000,'F',987654321,'Sales')
+
+
